@@ -1,0 +1,223 @@
+@import "../styles/global.css";
+
+/* 公有变量 */
+
+:root {
+  --headerBackground: #fffc;
+  --headerTextColor: #4c4948;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* 屏幕像素最低为768 px  */
+@media screen and (min-width: 768px) {
+
+
+/* Layout */
+
+/* 
+    @author : leewei
+    @time : 10.16
+    @content : Layout的样式
+*/
+
+.layoutContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.layoutContainer .layoutMain{
+     width:100%;
+     display: flex;
+     flex-direction: row;
+     background-color: #ececec;
+}
+
+.layoutContainer .layoutMain .layoutMainCenter {
+    margin: 30px 0;
+    width: 75%;
+    border: 2px solid black;
+}
+ .layoutContainer .layoutMain .layoutMainRight {
+     margin: 30px 0;
+     width: 25%;
+     background-color: black;
+ }
+
+
+/* =================================== */
+
+  /* =============== Header ============ */
+  /* 
+    @author : leewei
+    @time : 10.16
+    @content : header的样式
+*/
+
+  .headerContainer {
+    width: 100%;
+    height: 60px;
+    background-color: var(--headerBackground);
+    opacity: 0.8;
+    box-shadow: 0 5px 6px -5px rgb(133 133 133 / 60%);
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* justify-content: flex-end; */
+  }
+
+  /* blogname */
+  .headerContainer .blogName {
+    margin: 0 30px;
+    width: 30%;
+  }
+
+  .headerContainer .blogName a {
+    font-size: 25px;
+    text-decoration-line: none;
+    color: var(--headerTextColor);
+    font-weight: 400;
+    line-height: 60px;
+    text-align: center;
+  }
+
+  /* menu */
+
+  .headerContainer .menus {
+      width: 60%;
+      display: flex;
+      justify-content: flex-end;
+  }
+  .headerContainer .menus .menusItems {
+    display: flex;
+    flex-direction: row;
+    line-height: 60px;
+    text-align: center;
+    position: relative;
+  }
+
+  .menus .menusItems .menusItem {
+    margin: 0 20px;
+  }
+
+  .menus .menusItems .menusItem a {
+    text-decoration: none;
+    color: var(--headerTextColor);
+    position: relative;
+  }
+
+  .menus .menusItems .menusItem:hover a {
+    color: #35cdfe;
+    transition: ease-in;
+  }
+  .menus .menusItems .menusItem a::after {
+    height: 3px;
+    background-color: #35cdfe;
+    position: absolute;
+    top: 30px;
+    left: -7px;
+  }
+
+  .menus .menusItems .menusItem:hover a::after {
+    content: "";
+    display: block;
+    width: 110%;
+    transition: all .6s ease-in;
+  }
+  /* ========================================== */
+
+ /* =============== RightSIde ============ */
+  /* 
+    @author : leewei
+    @time : 10.16
+    @content : Rightside的样式
+*/
+.rightSideContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5%;
+}
+
+.rightSideContainer .personCard {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-color: white;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 15px;
+} 
+
+/* 头像 */
+.personCard .avator{
+    display: flex;
+    justify-content: center;
+}
+
+.personCard .avator img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+}
+
+/* 昵称 */
+
+.personCard  .nickName {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+.personCard  .nickName p {
+
+}
+
+.personCard .menuItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+.personCard .menuItems .menuItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.personCard .menuItems .menuItem > p {
+    font-size: 18px;
+}
+.personCard .menuItems .menuItem  .menuItemCount {
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+}
+
+.personCard .menuItems .menuItem  .menuItemCount a {
+    text-decoration-line: none;
+    color: var(--headerTextColor);
+}
+.personCard .menuItems .menuItem:hover  .menuItemCount a {
+    color: #35cdfe;
+}
+.personCard .motto {
+    text-indent: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-size: 15px;
+} 
+/* 座右铭 */
+
+
+
+/* =================================== */
+}
+
+/* ============================    768px 以上的屏幕适用    ============================ */
