@@ -5,6 +5,7 @@
 :root {
   --headerBackground: #fffc;
   --headerTextColor: #4c4948;
+  --cardShadow:0 3px 8px 6px rgba(7,17,27,0.05);
 }
 
 * {
@@ -41,12 +42,11 @@
 .layoutContainer .layoutMain .layoutMainCenter {
     margin: 30px 0;
     width: 75%;
-    border: 2px solid black;
 }
  .layoutContainer .layoutMain .layoutMainRight {
      margin: 30px 0;
      width: 25%;
-     background-color: black;
+     /* background-color: black; */
  }
 
 
@@ -152,6 +152,7 @@
     margin: 20px 0;
     padding: 10px;
     border-radius: 15px;
+    box-shadow: var(--cardShadow);
 } 
 
 /* 头像 */
