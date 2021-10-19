@@ -1,10 +1,13 @@
 @import "../styles/global.css";
 
+/* 对ant样式的引入 */
+@import '~antd/dist/antd.css'; 
+
 /* 公有变量 */
 :root {
   --titleText: #3c4858;
   --indexTagColor: #718096;
-  --textHoverColor:#35cdfe;
+  --textHoverColor: #35cdfe;
 }
 
 * {
@@ -27,7 +30,7 @@
     box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
     padding: 25px;
     border-radius: 20px;
-}
+  }
   .indexContainer .indexArticle {
     margin: 20px 0;
   }
@@ -79,12 +82,48 @@
 
   /* ==================================== */
 
- /* 
+  /* 
 @author : leewei
 @time : 10.17
-@content : index的样式
+@content : tags的样式
 */
 
+/* 顶部tag标签 */
+.tagsTopTags {
+  position: relative;
+  left: 50px;
+}
 
 
+.tagsTopTags .tagsTopTagsTitle {
+  margin: 16px;
+}
+  .tagsArticles {
+    /* border: 1px solid black; */
+    position: relative;
+    left: 50px;
+    width: 80%;
+    padding: 20px;
+
+  }
+  .tagsArticles .tagsArticle {
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  .tagsArticles .tagsArticle:hover {
+    background-color: #e2e2e2;
+  }
+
+  /* 内部文字 */
+
+  .tagsArticles .tagsArticle a {
+    color: var(--indexTagColor);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .tagsArticles .tagsArticle:hover a >span {
+    color: var(--textHoverColor);
+  }
 }

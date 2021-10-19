@@ -1,15 +1,19 @@
-import { graphql } from "gatsby";
+import { graphql,Link } from "gatsby";
 import React from "react";
 import Layout from "../component/Layout";
-import { Tag, Divider } from "antd";
-import { Timeline } from "antd";
+import {Tag, Divider } from "antd";
+
 
 export const query = graphql`
   query tags {
     allMarkdownRemark {
       distinct(field: frontmatter___tags)
       group(field: frontmatter___tags) {
-        totalCount
+        edges {
+          node {
+            id
+          }
+        }
       }
       totalCount
       edges {
@@ -17,6 +21,9 @@ export const query = graphql`
           frontmatter {
             title
             date
+          }
+          fields {
+            slug
           }
         }
       }
@@ -32,9 +39,9 @@ export default function tags({ data }) {
       <div className="tagsContainer">
         {/* 标签集合 */}
         <div className="tagsTopTags">
-          <div className="tagsTopTagsTitle">
+          <h2 className="tagsTopTagsTitle">
             标签 - {data.allMarkdownRemark.totalCount}
-          </div>
+          </h2>
 
           <div className="tagbox">
             <Divider style={{ margin: "20px" }}>
@@ -55,18 +62,22 @@ export default function tags({ data }) {
 
         {/* 文章集合 */}
 
+
         <div className="tagsArticles">
-          <Timeline mode="alternate">
+        <h2>文章</h2>
             {articlesList.map((data) => {
               return (
-                <Timeline.Item
+                <div
                   key={data.node.frontmatter.title + data.node.frontmatter.date}
+                  className="tagsArticle"
                 >
-                  {data.node.frontmatter.title} {data.node.frontmatter.date}
-                </Timeline.Item>
+                  <Link to={data.node.fields.slug}>
+                    <span>{data.node.frontmatter.title}</span>
+                    <span>{data.node.frontmatter.date}</span>
+                  </Link>
+                </div>
               );
             })}
-          </Timeline>
         </div>
       </div>
     </Layout>

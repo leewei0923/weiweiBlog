@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 
 export default function blogPost({data}) {
   const post = data.markdownRemark;
-
+  console.log(data)
   return (
     <Layout>
       <h1>{post.frontmatter.title}</h1>

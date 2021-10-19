@@ -38,4 +38,22 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+
+  const postsPerPage = 8;
+  const numPages = Math.ceil(17 / postsPerPage);
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    console.log("页码",i);
+    console.log("shenm",_)
+    createPage({
+      path: i === 0 ? `/page/` : `/page/${i+1}`,
+      component: path.resolve(`./src/templates/Page.js`),
+      context: {
+        currentPage: i+1,
+        totalPage: numPages,
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+      },
+    });
+  });
 };

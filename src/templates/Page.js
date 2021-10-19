@@ -2,12 +2,15 @@ import { graphql, Link } from "gatsby";
 import React from "react";
 import Layout from "../component/Layout";
 import { createFromIconfontCN } from "@ant-design/icons";
-import "./page.css";
+import "../pages/page.css";
 
-export default function index({ data }) {
+export default function Page({ data }) {
   const IconFont = createFromIconfontCN({
     scriptUrl: "//at.alicdn.com/t/font_2872071_zkbv9iemqw9.js",
   });
+
+  const { pageCount, currentPage } = data.allMarkdownRemark.pageInfo;  // currentPage 当前页  pageCount 总页数
+
   return (
     <Layout>
       <div className="indexContainer">
@@ -45,10 +48,23 @@ export default function index({ data }) {
         })}
 
         <div>
+          {console.log(data)}
           <div>
-            <Link to="/page/2" rel="next">
-              下一页 →
-            </Link>
+            {currentPage - 1 > 0 && (
+              <Link
+                to={"/page/" + (currentPage - 1 === 1 ? "" : currentPage - 1)}
+                rel="prev"
+              >
+                ← 上一页
+              </Link>
+            )}
+          </div>
+          <div>
+            {currentPage + 1 <= pageCount && (
+              <Link to={"/page/" + (currentPage + 1)} rel="next">
+                下一页 →
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -57,10 +73,11 @@ export default function index({ data }) {
 }
 
 export const query = graphql`
-  query MyQuery {
+  query myBlog($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { fields: frontmatter___title, order: DESC }
-      limit: 8
+      limit: $limit
+      skip: $skip
     ) {
       totalCount
       edges {
