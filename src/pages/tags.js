@@ -31,6 +31,7 @@ export const query = graphql`
   }
 `;
 export default function tags({ data }) {
+  // 随机变幻tag的颜色的列表
   const colorList = ["#f50", "#2db7f5", "#87d068", "#108ee9"];
   const random = ~~(Math.random() * 4);
   const articlesList = data.allMarkdownRemark.edges;

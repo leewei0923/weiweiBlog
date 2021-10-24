@@ -37,7 +37,7 @@ export default function Header(props) {
   return (
     <nav className="headerContainer">
       <div className="blogName">
-        <Link to="/">{props.blogname}</Link>
+        <Link to="/">{props.blogname ? props.blogname : "伟伟小世界"}</Link>
       </div>
 
       <div className="menus">

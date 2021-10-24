@@ -2,12 +2,15 @@
 
 /* 对ant样式的引入 */
 @import '~antd/dist/antd.css'; 
+@import "../styles/about.css";
 
 /* 公有变量 */
 :root {
   --titleText: #3c4858;
   --indexTagColor: #718096;
   --textHoverColor: #35cdfe;
+  --background: #fffc;
+  --cardShadow:0 3px 8px 6px rgba(7,17,27,0.05);
 }
 
 * {
@@ -22,7 +25,6 @@
 @time : 10.17
 @content : index的样式
 */
-
   /* index外部元素 */
   .indexContainer {
     width: 80%;
@@ -98,6 +100,14 @@
 .tagsTopTags .tagsTopTagsTitle {
   margin: 16px;
 }
+
+.tagsTopTags .tagbox {
+  width: 80%;
+  overflow: hidden;
+}
+
+
+/* 标签页的文章列表 */
   .tagsArticles {
     /* border: 1px solid black; */
     position: relative;
@@ -126,4 +136,6 @@
   .tagsArticles .tagsArticle:hover a >span {
     color: var(--textHoverColor);
   }
+
+
 }
