@@ -1,3 +1,13 @@
+:root {
+  --headerBackground: white;
+  --headerTextColor: #4c4948;
+  --cardShadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
+  --zuixin: #ff0000;
+  --hover:#4dbbe0;
+}
+
+
+/* 修改滚动条 */
 body::-webkit-scrollbar {
 width:2px;
 height:8px;

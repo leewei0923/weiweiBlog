@@ -1,0 +1,186 @@
+/* 屏幕像素最低为768 px  */
+@media screen and (max-width: 768px) {
+  /* Layout */
+/* 
+@author : leewei
+    @time : 10.31
+    @content : layou布局样式的样式
+*/
+
+.layoutMain {
+    position: relative;
+}
+
+
+  /* 
+    @author : leewei
+    @time : 10.26
+    @content : header的样式
+*/
+
+.toFix {
+    position: fixed;
+    transition: all  ease-in-out .6s;
+}
+.headerContainer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: white;
+
+    box-shadow: 2px 2px 10px #D1D0D0;
+    transition: all  ease-in-out .6s;
+    z-index: 20;
+}
+
+
+/* 标题 */
+.headerContainer .blogName a {
+    color: var(--headerTextColor);
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 10px;
+}
+
+/* 菜单按钮 */
+.headerContainer .mobileMenu {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    color: var(--headerTextColor);
+    margin: 0 20px 15px 0;
+}
+
+
+
+/* 移动端隐藏该组件样式 */
+.headerContainer .menus {
+    display: none;
+}  
+
+
+
+/* 
+    @author : leewei
+    @time : 10.30
+    @content : layout的样式
+
+*/
+
+
+/* 在屏幕宽度低于768px生效 */
+
+
+.layoutMainCenter {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #ececec;
+    position: relative;
+} 
+
+
+
+
+/*
+@author leewei
+time 2021 10-31
+content 弹出框右边的内容
+*/
+
+/* 移动端隐藏该组件样式 */
+.layoutMainRight {
+    display: none;
+}
+
+.mobbileRightContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+/* 左边 */
+
+.mobbileLeft {
+    width: 50%;
+    height: 100%;
+    background-color: #01030F;
+    opacity: 0.8;
+}
+
+/* 右边 */
+
+.mobbileRight {
+    width: 50%;
+    height: 100%;
+    background: white;
+    float: right;
+}
+
+
+
+/* ======================================= */
+
+
+/*
+@author leewei
+time 2021 10-31
+content footer的样式
+*/
+
+
+.footerContainer {
+    margin: auto;
+}
+
+  .footerContainer .footerInfo {
+    display: flex;
+    flex-direction: row;
+    width: 110px;
+    height: 30px;
+    margin: 0 10px;
+    justify-content: space-between;
+  }
+
+  .footerContainer .footerInfo p {
+    font-size: 20px;
+    color: var(--headerTextColor);
+  }
+
+  .footerContainer .footerInfo a {
+    font-size: 20px;
+    color: var(--headerTextColor);
+  }
+
+  /* =============================== */
+
+
+
+  /* 
+    @author : leewei
+    @time : 10.31
+    @content : 额外的菜单的样式
+*/
+
+  /* 返回顶部 */
+
+  .backTop {
+    background: var(--background);
+    padding: 5px 10px;
+    font-size: 20px;
+    box-shadow: var(--cardShadow);
+    border-radius: 5px;
+  }
+
+  /* ========================================= */
+
+}

@@ -1,3 +1,10 @@
+/* 
+author leewei
+time 2021 10.24
+task about 个人页面
+
+*/
+
 /* 总的容器 */
 .personInfoContainer {
   display: flex;
@@ -29,10 +36,10 @@
   left: 0;
   right: 0;
   overflow: hidden;
-  filter: blur(20px);
+  filter: blur(10px);
   z-index: -1;
   background: url(https://i2.w.hjfile.cn/doc/201307/9a9d31da98704a718df3535f7b16b0b3.jpg);
-  -webkit-filter: blur(20px);
+  -webkit-filter: blur(10px);
 }
 
 .personInfoContainer .peronInfo .personInfoBox1 {

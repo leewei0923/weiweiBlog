@@ -1,0 +1,73 @@
+/* 屏幕像素最低为768 px  */
+@media screen and (max-width: 768px) {
+  /* 
+@author : leewei
+@time : 10.26
+@content : index的移动端样式
+*/
+
+/* 首页样式 */
+.indexContainer {
+  width: 90%;
+  margin: auto;
+
+  box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.indexContainer .indexArticle {
+  margin: 20px 0;
+}
+
+.indexContainer .indexArticle .indexArticleTitle a {
+    text-decoration-line: none;
+    color: var(--titleText);
+    font-size: 22px;
+  }
+
+  .indexContainer .indexArticle .indexArticleTitle:hover a {
+    color: var(--textHoverColor);
+  }
+  /* index 摘要 */
+  .indexContainer .indexArticle .indexArticleSummary {
+    margin: 10px 0;
+    text-indent: 20px;
+  }
+  .indexContainer .indexArticle .indexArticleSummary a {
+    text-decoration-line: none;
+    color: var(--titleText);
+    font-size: 17px;
+  }
+  .indexContainer .indexArticle .indexArticleSummary:hover a {
+    color: var(--textHoverColor);
+  }
+
+  /* index标签 */
+
+  .indexContainer .indexArticle .indexArticleTags {
+    display: flex;
+    flex-direction: row;
+  }
+  .indexContainer .indexArticle .indexArticleTags .indexArticleTag > span {
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+  }
+  .indexContainer .indexArticle .indexArticleTags .indexArticleTag > p {
+    font-size: 18px;
+    margin: 0 5px;
+  }
+  .indexContainer .indexArticle .indexArticleTags .indexArticleTag {
+    display: flex;
+    flex-direction: row;
+    color: var(--indexTagColor);
+    margin: 10px 20px 0 0;
+  }
+
+
+/* ================================== */
+
+
+
+}

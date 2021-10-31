@@ -3,6 +3,7 @@ import React from "react";
 import Layout from "../component/Layout";
 import { createFromIconfontCN } from "@ant-design/icons";
 import "./page.css";
+import "./mobbilePage.css";
 
 export default function index({ data }) {
   const IconFont = createFromIconfontCN({
