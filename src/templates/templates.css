@@ -1,0 +1,88 @@
+/*
+@author leewei
+date 2021.11.03
+task 模板的样式
+
+*/
+@import "../styles/global.css";
+/*====================================*/
+/*
+@author leewei
+date 2021.11.03
+task blogpost的样式
+*/
+
+.blogpostContainer {
+  margin: auto;
+  width: 90%;
+  box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+/*====================================*/
+
+@media screen and (min-width: 768px) {
+  /*
+@author leewei
+date 2021.11.03
+task 目录的PC样式
+*/
+
+  .blogCatalog {
+    position: fixed;
+    top: 60px;
+    left: 55%;
+    display: flex;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+    border-radius: 10px;
+    flex-direction: column;
+  }
+
+  .blogCatalog .blogCatalogTop {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    height: 40px;
+    background-color: #428bca;
+    cursor: pointer;
+  }
+
+  .blogCatalog .blogCatalogTop > span {
+    font-size: 20px;
+  }
+
+  .blogCatalog .blogCatalogTop > p {
+    margin: 0 10px;
+    color: white;
+    font-weight: 800;
+  }
+
+  .blogCatalog .blogCatalogFooter {
+    width: 180px;
+    margin: 0 20px;
+  }
+
+  .blogCatalog .disapperCatalogFooter {
+    width: 180px;
+    margin: 0 20px;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .blogCatalog .blogCatalogFooter ul li ul {
+    margin: 0 10px;
+  }
+
+  .blogCatalog .blogCatalogFooter a {
+    color: var(--headerTextColor);
+    transition: all ease-in .3s;
+  }
+
+  .blogCatalog .blogCatalogFooter a:hover {
+      color: var(--hover);
+      transition: all ease-in-out .3s;
+  }
+}

@@ -5,13 +5,19 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
+    `gatsby-remark-autolink-headers`,
     {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [`gatsby-remark-autolink-headers`, `gatsby-remark-prismjs`],
+      },
+    },
     "gatsby-plugin-mdx",
     {
       resolve: "gatsby-source-filesystem",

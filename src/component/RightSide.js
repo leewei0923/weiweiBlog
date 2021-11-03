@@ -31,6 +31,8 @@ export default function RightSide(data) {
     scriptUrl: "//at.alicdn.com/t/font_2872071_5hgrcn99wgm.js",
   });
 
+  
+
   return (
     <div className="rightSideContainer">
       <div className="personCard">

@@ -18,3 +18,13 @@ border-radius:100px;
 -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.2);
 background:#35cdfe;
 }
+
+.gatsby-highlight-code-line {
+  background-color: #feb;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f99;
+}

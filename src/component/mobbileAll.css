@@ -126,6 +126,10 @@ content 弹出框右边的内容
     float: right;
 }
 
+.mobbileRight .avator > img {
+  width: 100px;
+  height: 100px;
+}
 
 
 /* ======================================= */

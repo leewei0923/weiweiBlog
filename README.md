@@ -114,3 +114,67 @@
 4. 页面弹出遮罩层时，页面还是可以滚动或滑动
 
 解决:
+
+5. gatsby 版本旧 由V3 升级 v4 版本
+
+解决:
+
+```
+1. npm outdated / yarn upgrade-interactive
+   自动升级到v3的最新版本(我使用npm outdated 是列出来版本差异,我自己在package.json 中修改版本);
+
+2. npm install gatsby@latest
+   在npm 版本低于7 使用这个
+
+  npm install gatsby@latest --legacy-peer-deps
+  npm >= 7 使用上面的语句
+
+```
+
+[解决方法的网站](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v3-to-v4/)
+
+6. 无法设置页面目录 ? (已经获取到 标题的 锚点链接,单击没有反应)
+
+    在F12 后看到标题那没有设置锚点 , 后来解决办法是使用另一个插件生成锚点
+
+```
+  npm install --save gatsby-remark-autolink-headers
+
+  // In your gatsby-config.js
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-autolink-headers`],
+      },
+    },
+  ],
+}
+
+```
+
+prismjs 插件与 autolink 有迷之冲突，一定要把 autolink 放前，prismjs 放后：
+
+// good
+{
+  resolve: `gatsby-transformer-remark`,
+  options: {
+    plugins: [
+      `gatsby-remark-autolink-headers`,
+      `gatsby-remark-prismjs`,
+    ],
+  },
+}
+ 
+// bad
+{
+  resolve: `gatsby-transformer-remark`,
+  options: {
+    plugins: [
+      `gatsby-remark-prismjs`, // should be placed after `gatsby-remark-autolink-headers`
+      `gatsby-remark-autolink-headers`,
+    ],
+  },
+}
+添加成功后由 md 文件转换得到的 html 字符串里的标题就会都带上 id，这样锚链接就能正常使用啦！
