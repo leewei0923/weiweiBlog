@@ -1,0 +1,82 @@
+/*
+@author leewei
+date 2021.11.03
+task blogpost的移动端样式
+
+*/
+
+@media screen and (max-width: 768px) {
+  /* 
+    @author leewei
+    date 2021.11.03
+    task 目录的设置
+    */
+  .blogCatalog {
+      position: fixed;
+      top: 70px;
+      margin: 0 20px;
+  }
+
+
+  .blogCatalog .blogCatalogTop {
+      width: 100px;
+    display: flex;
+    flex-direction: row;
+    background-color: #428bca;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .blogCatalog .blogCatalogTop p {
+      font-size: 13px;
+      color: white;
+      margin: 10px;
+  }
+
+  .blogCatalog .blogCatalogTop span {
+      font-size: 13px;
+      /* background: white; */
+      color: white;
+  }
+
+  /* 出现目录的样式 */
+  .blogCatalog .blogCatalogFooter {
+    width: 100px;
+    max-height: 400px;
+    transition: all 1s linear;
+    overflow: auto;
+    background: rgba(255,255,255,0.8);
+  }
+  /* 隐藏目录的状态 */
+  .blogCatalog .disapperCatalogFooter {
+    width: 100px;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .blogCatalog .blogCatalogFooter::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .blogCatalog .blogCatalogFooter::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #428BCA;
+  }
+
+  .blogCatalog .blogCatalogFooter ul li ul {
+    margin: 0 10px;
+  }
+
+  .blogCatalog .blogCatalogFooter a {
+    color: var(--headerTextColor);
+    transition: all ease-in 0.3s;
+  }
+
+  .blogCatalog .blogCatalogFooter a:hover {
+    color: var(--hover);
+    transition: all ease-in-out 0.3s;
+  }
+}

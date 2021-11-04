@@ -2,10 +2,10 @@ import React,{useState} from "react";
 import Layout from "../component/Layout";
 import { graphql } from "gatsby";
 import { createFromIconfontCN } from "@ant-design/icons";
-
 import "../styles/global.css";
 
-import "../templates/templates.css";
+import "./templates.css";
+import "./templatesMobbile.css";
 
 // alicion 自定义图标
 const IconFont = createFromIconfontCN({
@@ -28,12 +28,14 @@ export default function BlogPost({ data }) {
   }
   return (
     <Layout>
+    {/* 正文部分 */}
       <div className="blogpostContainer">
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
         {console.log(data)}
       </div>
 
+    {/* 目录部分 */}
       <section className="blogCatalog">
         <div className="blogCatalogTop" onClick={()=> {return disapperBlogCatalog()}}>
           <IconFont type="icon-mulu" />
@@ -49,10 +51,6 @@ export default function BlogPost({ data }) {
           ""
         )}
         {console.log(blogCatalogVar)}
-        {/* <div
-          dangerouslySetInnerHTML={{ __html: catalog }}
-          className="blogCatalogFooter"
-        ></div> */}
       </section>
     </Layout>
   );
@@ -76,4 +74,5 @@ export const query = graphql`
       }
     }
   }
+
 `;
