@@ -34,7 +34,7 @@
 
 ## 仓库地址
 
-演示地址: [伟伟小世界]()
+演示地址: [伟伟小世界](https://weiwei.web.cloudendpoint.cn/)
 仓库地址: [GitHub]()
 
 
