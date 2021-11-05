@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { BackTop } from "antd";
 import { UpOutlined } from "@ant-design/icons";
@@ -30,13 +30,22 @@ export default function Layout({ children }) {
   // 在移动端 , 控制 rightside 显示和关闭
 
   let [sideShow, setsideShow] = useState(false);
-
+  let mounted = true;
   let sideShowBtn = () => {
-    setsideShow(!sideShow);
+    if(mounted) {
+      setsideShow(!sideShow);
+    }
+    
     sideShow
       ? (document.documentElement.style.overflow = "scroll")
       : (document.documentElement.style.overflow = "hidden");
   };
+
+  useEffect(()=>{
+    return function cleanUp() {
+      mounted = false;
+    }
+  },[])
 
   return (
     <div className="layoutContainer">
@@ -66,13 +75,15 @@ export default function Layout({ children }) {
       </div>
 
       <div className="extralContainer">
-        {sideShow ? '':(
+        {sideShow ? (
+          ""
+        ) : (
           <BackTop duration="600">
             <div className="backTop">
               <UpOutlined />
             </div>
           </BackTop>
-        ) }
+        )}
       </div>
     </div>
   );

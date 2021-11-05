@@ -1,18 +1,31 @@
-import React from "react";
+import React,{useState} from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import "./page.css"
-import avator from "../images/avator.jpg"
+import avator from "../images/avator.jpg";
+import RightSideMobbile from "../component/RightSideMobbile";
 import { createFromIconfontCN } from "@ant-design/icons";
 
-export default function about() {
+
+export default function About() {
   const FontIcon = createFromIconfontCN({
     scriptUrl: "//at.alicdn.com/t/font_2872071_bul5xy5x3ij.js",
   });
 
+
+  let [sideShow, setsideShow] = useState(false);
+
+  let sideShowBtn = () => {
+    setsideShow(!sideShow);
+    sideShow
+      ? (document.documentElement.style.overflow = "scroll")
+      : (document.documentElement.style.overflow = "hidden");
+  };
+
   return (
     <div>
-      <Header />
+      <Header sideShow={sideShowBtn} />
+
       <div className="personInfoContainer">
         {/* 基本信息 */}
 
@@ -83,11 +96,11 @@ export default function about() {
           </div>
         </div>
       </div>
-
-      <div style={{display:"flex"}}>
+      {/* 移动端显示该组件 */}
+      {sideShow ? <RightSideMobbile sideShow={sideShowBtn} /> : ""}
+      <div style={{ display: "flex" }}>
         <Footer />
       </div>
-      
     </div>
   );
 }

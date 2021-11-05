@@ -2,7 +2,7 @@ import { graphql,Link } from "gatsby";
 import React from "react";
 import Layout from "../component/Layout";
 import {Tag, Divider } from "antd";
-
+import "./mobbilePage.css";
 
 export const query = graphql`
   query tags {

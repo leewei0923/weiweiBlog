@@ -178,3 +178,56 @@ prismjs 插件与 autolink 有迷之冲突，一定要把 autolink 放前，pris
   },
 }
 添加成功后由 md 文件转换得到的 html 字符串里的标题就会都带上 id，这样锚链接就能正常使用啦！
+
+
+7. 报错
+
+```
+react_devtools_backend.js:2540 Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+```
+
+原因是在原页面设置了取消scroll
+
+
+8. 报错
+
+Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+
+无法对卸载的组件执行 React 状态更新。 这是一个空操作，但它表明您的应用程序中存在内存泄漏。 要修复，请取消 useEffect 清理函数中的所有订阅和异步任务。
+
+解决办法:
+
+参考
+
+[https://blog.csdn.net/u010565037/article/details/88716681](https://blog.csdn.net/u010565037/article/details/88716681)
+
+[https://stackoverflow.com/questions/53949393/cant-perform-a-react-state-update-on-an-unmounted-component](https://stackoverflow.com/questions/53949393/cant-perform-a-react-state-update-on-an-unmounted-component)
+
+
+```js
+
+  let [sideShow, setsideShow] = useState(false);
+  // 此处
+  let mounted = true;
+  let sideShowBtn = () => {
+    if(mounted) {
+      // 此处
+      setsideShow(!sideShow);
+    }
+    
+    sideShow
+      ? (document.documentElement.style.overflow = "scroll")
+      : (document.documentElement.style.overflow = "hidden");
+  };
+
+  useEffect(()=>{
+    // 卸载页面的时候 使用此函数
+    return function cleanUp() {
+      mounted = false;
+    }
+  },[])
+
+
+
+```
+

@@ -69,5 +69,53 @@
 /* ================================== */
 
 
+  /* 
+@author : leewei
+@time : 10.26
+@content : tags的移动端样式
+*/
+.tagsContainer {
+  overflow: hidden;
+} 
+
+/* 标签 */
+.tagsTopTags {
+  /* overflow: hidden; */
+  width: 90%;
+}
+
+/* 文章列表 */
+/* 标签页的文章列表 */
+  .tagsArticles {
+    /* border: 1px solid black; */
+    position: relative;
+    left: 50px;
+    width: 80%;
+    padding: 20px;
+
+  }
+  .tagsArticles .tagsArticle {
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  .tagsArticles .tagsArticle:hover {
+    background-color: #e2e2e2;
+  }
+
+  /* 内部文字 */
+
+  .tagsArticles .tagsArticle a {
+    color: var(--indexTagColor);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .tagsArticles .tagsArticle:hover a >span {
+    color: var(--textHoverColor);
+  }
+
+
+/* ============================== */
 
 }

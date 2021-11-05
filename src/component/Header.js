@@ -38,18 +38,25 @@ const IconFont = createFromIconfontCN({
 });
 
 export default function Header(props) {
-  const {sideShow} = props;
-    // console.log(sideShow)
+  const { sideShow } = props;
 
   const [tofix, settofix] = useState(false);
   // 获取滚动条的的高度 用来判断是否header fixed
   useEffect(() => {
-    const header = document.querySelector(".headerContainer");
-    window.addEventListener("scroll", () => {
-      window.pageYOffset >= header.clientHeight  ? settofix(true) : settofix(false);
-    });
-  });
+    let active = true;
+    if (active) {
+      const header = document.querySelector(".headerContainer");
+      window.addEventListener("scroll", () => {
+        window.pageYOffset >= header.clientHeight
+          ? settofix(true)
+          : settofix(false);
+      });
+    }
 
+    return function cleanUp() {
+      active = false;
+    }
+  },[]);
 
   return (
     <nav className={tofix ? "headerContainer toFix" : "headerContainer"}>
@@ -71,7 +78,7 @@ export default function Header(props) {
       </div>
 
       {/* 移动端 */}
-      <div className="mobileMenu" onClick={sideShow }>
+      <div className="mobileMenu" onClick={sideShow}>
         <IconFont type="icon-caidan"></IconFont>
       </div>
     </nav>

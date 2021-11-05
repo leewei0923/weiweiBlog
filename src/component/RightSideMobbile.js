@@ -43,9 +43,9 @@ export default function RightSideMobbile(props) {
     const { sideShow } = props;
 
     return (
-      <aside className="mobbileRightContainer">
+      <aside className="mobbileRightContainer" onClick={sideShow}>
         {/* 左边 */}
-        <div className="mobbileLeft" onClick={sideShow}></div>
+        <div className="mobbileLeft"></div>
 
         {/* 右边 */}
         <div className="mobbileRight">
@@ -55,7 +55,10 @@ export default function RightSideMobbile(props) {
               src="https://qi.7miaoyu.com/weiweiblog-avator.jpg"
               alt="头像"
             />
+
+            <p></p>
           </div>
+          <hr />
           {/* 文章 */}
           <div className="articleCount">
             <p>文章</p>
@@ -63,7 +66,7 @@ export default function RightSideMobbile(props) {
           </div>
           {/* 导航栏 */}
 
-          <nav>
+          <nav className="navList">
             {url.map((item) => {
               return (
                 <div key={item.title} className="navItem">
