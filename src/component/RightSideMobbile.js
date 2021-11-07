@@ -2,6 +2,7 @@ import React from 'react'
 import "./mobbileAll.css"
 import { createFromIconfontCN } from "@ant-design/icons";
 import { Link } from "gatsby";
+import weiwei_api from "../api/api";
 
 //data
 
@@ -26,11 +27,16 @@ const url = [
     url: "/friendLink",
     icon: "icon-youlian",
   },
+  {
+    title: "留言墙",
+    url: "/messagewall",
+    icon: "icon-liuyanzhi",
+  },
 ];
 
 // alicion 自定义图标
 const IconFont = createFromIconfontCN({
-  scriptUrl: "//at.alicdn.com/t/font_2872071_mfj58sc8wud.js",
+  scriptUrl: weiwei_api.iconFontUrl,
 });
 
 

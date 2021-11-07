@@ -50,7 +50,6 @@ export default function BlogPost({ data }) {
         ) : (
           ""
         )}
-        {console.log(blogCatalogVar)}
       </section>
     </Layout>
   );

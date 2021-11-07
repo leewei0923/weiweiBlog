@@ -62,7 +62,7 @@ task blogpost的移动端样式
 
   .blogCatalog .blogCatalogFooter::-webkit-scrollbar-thumb {
     border-radius: 100px;
-    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    --webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     background: #428BCA;
   }
 

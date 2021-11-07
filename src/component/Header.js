@@ -1,6 +1,8 @@
 import { Link } from "gatsby";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import { createFromIconfontCN } from "@ant-design/icons";
+import weiwei_api from "../api/api";
+
 
 // styles
 import "./all.css"; //PC端
@@ -30,28 +32,36 @@ const url = [
     url: "/friendLink",
     icon: "icon-youlian",
   },
+  {
+    title: "留言墙",
+    url: "/messagewall",
+    icon: "icon-liuyanzhi",
+  },
 ];
 
 // alicion 自定义图标
 const IconFont = createFromIconfontCN({
-  scriptUrl: "//at.alicdn.com/t/font_2872071_mfj58sc8wud.js",
+  scriptUrl: weiwei_api.iconFontUrl,
 });
 
 export default function Header(props) {
   const { sideShow } = props;
 
   const [tofix, settofix] = useState(false);
+
   // 获取滚动条的的高度 用来判断是否header fixed
   useEffect(() => {
     let active = true;
-    if (active) {
+    let flag = false;
+    
       const header = document.querySelector(".headerContainer");
       window.addEventListener("scroll", () => {
         window.pageYOffset >= header.clientHeight
-          ? settofix(true)
-          : settofix(false);
+          ? flag = true
+          : flag = false;
+
+          if(active) settofix(flag);
       });
-    }
 
     return function cleanUp() {
       active = false;
@@ -59,7 +69,7 @@ export default function Header(props) {
   },[]);
 
   return (
-    <nav className={tofix ? "headerContainer toFix" : "headerContainer"}>
+    <nav className={tofix ? "toFix headerContainer" : "headerContainer"}>
       <div className="blogName">
         <Link to="/">{props.blogname ? props.blogname : "伟伟小世界"}</Link>
       </div>

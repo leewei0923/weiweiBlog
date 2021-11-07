@@ -231,3 +231,26 @@ Can't perform a React state update on an unmounted component. This is a no-op, b
 
 ```
 
+以上的问题还出现在切换fixed状态那
+
+```js
+
+
+ useEffect(() => {
+    let active = true;
+    let flag = false;
+    
+      const header = document.querySelector(".headerContainer");
+      window.addEventListener("scroll", () => {
+        window.pageYOffset >= header.clientHeight
+          ? flag = true
+          : flag = false;
+
+          if(active) settofix(flag);
+      });
+
+    return function cleanUp() {
+      active = false;
+    }
+  },[]);
+```
