@@ -33,7 +33,7 @@
 主要采用了gatsby + react技术栈。[gatsby传送门](https://www.gatsbyjs.cn/)
 
 ## 仓库地址
-
+**演示地址为旧版本没有和仓库内容保持同步，2022年再更改**
 演示地址: [伟伟小世界](https://weiwei.web.cloudendpoint.cn/)
 仓库地址: [GitHub]()
 
